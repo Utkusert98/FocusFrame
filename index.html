@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,7 +80,7 @@
 
 
           <!-- Tablet ve mobile versiyonda menünün açılması için "is-close" u kaldırınız !! -->
-          <div class="mobile_window is-close ">
+          
 
             <div class="mobile_menu">
               <div class="exit_div">
@@ -219,14 +219,22 @@
 
     <!-- MASTER-SECTİON BAŞLADI-->
 
-    <section id="master-section">
-      <h2 class="master">
-
-        MASTER <span class="master-span">YOUR PHOTOGRAPY </span> <span class="skill-mobile-span">SKILLS WITH US!</span>
-
-      </h2>
-    </section>
-
+<section id="master-section">
+  <div class="marquee">
+    <div class="marquee__inner">
+      <p class="marquee__line">
+        <span class="master">MASTER</span>
+        <span class="master-span"> YOUR PHOTOGRAPHY</span>
+        <span class="skill-mobile-span"> SKILLS WITH US!</span>
+      </p>
+      <p class="marquee__line">
+        <span class="master">MASTER</span>
+        <span class="master-span"> YOUR PHOTOGRAPHY</span>
+        <span class="skill-mobile-span"> SKILLS WITH US!</span>
+      </p>
+    </div>
+  </div>
+</section>
     <!-- MASTER-SECTİON BİTTİ-->
 
     <!-- ABOUT-SECTİON BAŞLADI-->
@@ -626,6 +634,22 @@
         </div>
       </div>
     </footer>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileWindow = document.querySelector('.mobile_window');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      mobileWindow.classList.toggle('is-close');
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileWindow.classList.add('is-close');
+    });
+  });
+</script>
 
     <!-- FOOTER-SECTİON BİTTİ -->
   </body>

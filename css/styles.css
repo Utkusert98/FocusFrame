@@ -268,24 +268,74 @@ body {
 /* HERO-SECTİON BİTTİ */
 
 /* MASTER-SECTİON BAŞLADI */
+
+
+body {
+  margin: 0;
+  background-color: #121212;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #master-section {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: #121212;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.master {
+
+.marquee {
+  overflow: hidden;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
-  font-size: 59px;
-  line-height: 1.08;
+  font-size: clamp(24px, 6vw, 59px); /* Responsive font size */
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.marquee__inner {
+  display: flex;
+}
+
+.marquee__line {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 15px 30px;
+  min-width: 100%;
+  white-space: nowrap;
+  animation: marqueeLine 8s linear infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Renkler */
+.master {
   color: rgba(190, 166, 158, 1);
 }
-.master-span {
+
+.master-span,
+.skill-mobile-span {
   color: #fff;
+}
+.marquee__line span {
+  font-size: inherit;        /* ebeveynin font-size'ını kullan */
+  display: inline-block;     /* daha tutarlı kutu davranışı için */
+  line-height: 1;            /* dikey hizalama sabit olsun */
+  vertical-align: middle;    /* baseline farklılıklarını düzeltir */
+  white-space: nowrap;       /* kelimelerin beklenmedik kırılmasını engeller */
+}
+
+.master, .master-span, .skill-mobile-span {
+  font-size: inherit !important;
 }
 /* MASTER-SECTİON BİTTİ */
 
@@ -2161,6 +2211,8 @@ body {
     /* FOOTER-SECTİON BİTTİ */
   }
 }
+
+
 
 @media screen and (min-width: 1280px) {
   body {
